@@ -1,0 +1,13 @@
+train: /content/drive/MyDrive/object_detection/colab/train/images
+val: /content/drive/MyDrive/object_detection/colab/valid/images
+test: /content/drive/MyDrive/object_detection/colab/test/images
+
+nc: 4
+names: ['0', '1', '2', '3']
+
+roboflow:
+  workspace: mphp
+  project: check-ol4vh
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/mphp/check-ol4vh/dataset/2
