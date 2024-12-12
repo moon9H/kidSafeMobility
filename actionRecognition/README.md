@@ -30,14 +30,16 @@ Custom Set으로 학습한 ST-GCN 모델의 성능 평가 방법
 python main.py recognition -c config/st_gcn/custom_set/test.yaml
 ```
 
-###result
-Top-1 accuracy 기준 평가
+### result
 <div align="center">
-    <img src="resource/media/Top1Accuracy.jpg">
-</div>
-Confusion Matrix
-<div align="center">
-    <img src="resource/media/ConfusionMatrix.jpg">
+    <div style="display: inline-block; margin-right: 20px;">
+        <img src="resource/media/Top1Accuracy.jpg" alt="Top-1 Accuracy">
+        <p>Top-1 Accuracy</p>
+    </div>
+    <div style="display: inline-block;">
+        <img src="resource/media/ConfusionMatrix.jpg" alt="Confusion Matrix">
+        <p>Confusion Matrix</p>
+    </div>
 </div>
 
 
