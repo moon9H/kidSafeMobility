@@ -25,3 +25,24 @@ python main.py demo_offline [--video ${PATH_TO_VIDEO}] [--openpose ${PATH_TO_OPE
 ```
 
 ## Testing actionRecognition Model
+Custom Set으로 학습한 ST-GCN 모델의 성능 평가 방법
+```
+python main.py recognition -c config/st_gcn/custom_set/test.yaml
+```
+
+###result
+Top-1 accuracy 기준 평가
+<div align="center">
+    <img src="resource/media/Top1Accuracy.png">
+</div>
+Confusion Matrix
+<div align="center">
+    <img src="resource/media/ConfusionMatrix.png">
+</div>
+
+
+## Test
+단위 테스트 및 실제 환경 테스트 결과
+<div align="center">
+    <img src="resource/media/Test.png">
+</div>
