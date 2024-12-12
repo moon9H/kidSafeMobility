@@ -33,11 +33,11 @@ python main.py recognition -c config/st_gcn/custom_set/test.yaml
 ###result
 Top-1 accuracy 기준 평가
 <div align="center">
-    <img src="resource/media/Top1Accuracy.png">
+    <img src="resource/media/Top1Accuracy.jpg">
 </div>
 Confusion Matrix
 <div align="center">
-    <img src="resource/media/ConfusionMatrix.png">
+    <img src="resource/media/ConfusionMatrix.jpg">
 </div>
 
 
