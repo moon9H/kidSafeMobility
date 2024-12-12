@@ -1,4 +1,4 @@
-weights: ./models/custom.pt
+weights: ./models/actionRecognitionModel.pt
 
 # feeder
 feeder: feeder.feeder.Feeder
