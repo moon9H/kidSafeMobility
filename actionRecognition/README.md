@@ -31,15 +31,8 @@ python main.py recognition -c config/st_gcn/custom_set/test.yaml
 ```
 
 ### Result
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-    <div>
-        <img src="resource/media/Top1Accuracy.jpg" alt="Top-1 Accuracy" style="max-width: 100%; height: auto;">
-        <p style="text-align: center;">Top-1 Accuracy</p>
-    </div>
-    <div>
-        <img src="resource/media/ConfusionMatrix.jpg" alt="Confusion Matrix" style="max-width: 100%; height: auto;">
-        <p style="text-align: center;">Confusion Matrix</p>
-    </div>
+<div align="center">
+    <img src="resource/media/evaluation.jpg">
 </div>
 
 
