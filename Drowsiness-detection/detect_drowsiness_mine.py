@@ -122,6 +122,18 @@ while True:
 
         cv2.putText(frame, "EAR: {:.2f}".format(smoothed_ear), (300, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
+    else:  # 얼굴 탐지 실패
+        if len(LEFT_EYE_HISTORY) > 0 and len(RIGHT_EYE_HISTORY) > 0:
+            # 최근 눈 위치를 사용하여 표시
+            leftEye = np.mean(LEFT_EYE_HISTORY, axis=0).astype(int)
+            rightEye = np.mean(RIGHT_EYE_HISTORY, axis=0).astype(int)
+
+            leftEyeHull = cv2.convexHull(leftEye)
+            rightEyeHull = cv2.convexHull(rightEye)
+            cv2.drawContours(frame, [leftEyeHull], -1, (0, 255, 255), 1)
+            cv2.drawContours(frame, [rightEyeHull], -1, (0, 255, 255), 1)
+        else:
+            cv2.putText(frame, "", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
     # 비디오 출력 저장
     if args["output"]:
