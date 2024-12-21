@@ -33,7 +33,8 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--shape-predictor", required=True, help="Path to facial landmark predictor")
 ap.add_argument("-a", "--alarm", type=str, default="", help="Path to alarm .WAV file")
 ap.add_argument("-w", "--webcam", type=int, default=0, help="Index of webcam on system")
-
+ap.add_argument("-v", "--video", type=str, help="Path to input video file")
+ap.add_argument("-o", "--output", type=str, help="Path to save output video file")
 args = vars(ap.parse_args())
 
 EYE_AR_THRESH = 0.26
@@ -53,7 +54,17 @@ predictor = dlib.shape_predictor(args["shape_predictor"])
 (lStart, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS["left_eye"]
 (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
 
+# 비디오 스트림 설정
+if args["video"]:
+    cap = cv2.VideoCapture(args["video"])
+else:
+    cap = VideoStream(src=args["webcam"]).start()
 
+if args["output"]:
+    fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    out = cv2.VideoWriter(args["output"], fourcc, 20.0, (450, 300))
+
+time.sleep(1.0)
 
 # 프레임 반복 처리
 while True:
@@ -111,6 +122,10 @@ while True:
 
         cv2.putText(frame, "EAR: {:.2f}".format(smoothed_ear), (300, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
+
+    # 비디오 출력 저장
+    if args["output"]:
+        out.write(frame)
 
     # 프레임 표시
     cv2.imshow("Frame", frame)
