@@ -1,7 +1,0 @@
-operating_system:Darwin
-os_version:24.4.0
-cpu_type:arm
-cpu_cores:8
-memory_total:17179869184
-cpu_usage:13.4
-memory_usage:69.1
